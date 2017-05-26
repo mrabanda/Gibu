@@ -3,7 +3,9 @@ An endownment SaaS application used to empower the ambitious.
 
 ### What You Can Do
 
-- View Featured and most recent donation campaigns
+- Sign up and log in via username and password
+
+- View featured and most recent donation campaigns
 
 - Log on, create a your own campaign and view your past campaigns
 
