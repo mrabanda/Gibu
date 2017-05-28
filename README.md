@@ -19,3 +19,4 @@ An endownment SaaS application used to empower the ambitious.
 - Handebars
 - Passport
 - Stripe
+- Heroku
