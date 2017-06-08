@@ -8,11 +8,11 @@ const stripe = require('stripe')('sk_test_iQicrRnQSDDRRJlP5CJlwuaz')
 router.get('/', function(request, response) {
   db.Project.findAll({
     
-  }).then(function (projects) {
+  }).then((projects) => {
     newProjects = projects.filter((project) => project.id > projects.length - 3)
+    projects.reverse();
     // nearlyFunded = projects.filter((project) => (parseInt(project.donaions) / parseInt(project.goal)) > 0.9)
-    response.render('index', {projects: projects,
-                                        newProjects});
+    response.render('index', {projects: projects, newProjects});
   })
 });
 
@@ -41,7 +41,6 @@ router.get('/dashboard', middleware.authenticated, function(request, response) {
       UserId: request.user.id
     }
   }).then(function(projects) {
-    console.log('---------------------', projects)
     response.render('dashboard', {user: request.user,
                                         projects});
   })
@@ -52,7 +51,6 @@ router.get('/newcampaign', middleware.authenticated, function(request, response)
 });
 
 router.post('/newcampaign', middleware.authenticated, function(request, response) {
-  console.log("-------", request.campaignTitle);
   db.Project.find({where: {name: request.campaignTitle}}).then(function(project) {
     if (!project) {
       db.Project.create({name: request.body.campaignTitle, imageUrl: request.body.imageUrl, description: request.body.description, UserId: request.user.id, goal: request.body.amount}).then(function(campaign){
@@ -89,7 +87,6 @@ router.post('/signup', function(request, response) {
           }
         });
       }).catch(function(err) {
-        console.log('ran in here CATCH ONE')
         request.flash('error message:', err.message)
         return response.redirect('/signup');
       });
@@ -99,7 +96,6 @@ router.post('/signup', function(request, response) {
 
 router.post('/donate/:id', middleware.authenticated, function(request, response) {
   let id = request.params.id;
-  console.log('-----params', request.body);
   stripe.customers.create({
     email: request.body.stripeEmail,
     source: request.body.stripeToken

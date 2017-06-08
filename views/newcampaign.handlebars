@@ -7,22 +7,36 @@
           <div class="form-group">
             <label>Campaign Title</label>
             <br>
-            <input class="campaignInputs" id="campaignTitle" name="campaignTitle" placeholder="Enter Gibu Campaign Title" type="text">
+            <input class="campaignInputs" id="campaignTitle" name="campaignTitle" placeholder="Enter Gibu Campaign Title" type="text" required>
           </div>
           <div class="form-group">
             <label>Include an image for your Campaign</label>
              <br>
-            <input class="campaignInputs" id="imageUrl" name="imageUrl" placeholder="Enter Image Url" type="text">
+            <select class="campaignInputs" id="imageUrl" name="imageUrl" required>
+              <option value="http://lorempixel.com/350/350/abstract" selected>abstract</option>
+              <option value="http://lorempixel.com/350/350/animals">animals</option>
+              <option value="http://lorempixel.com/350/350/business">business</option>
+              <option value="http://lorempixel.com/350/350/cats">cats</option>
+              <option value="http://lorempixel.com/350/350/city">city</option>
+              <option value="http://lorempixel.com/350/350/food">food</option>
+              <option value="http://lorempixel.com/350/350/nightlife">nightlife</option>
+              <option value="http://lorempixel.com/350/350/fashion">fashion</option>
+              <option value="http://lorempixel.com/350/350/people">people</option>
+              <option value="http://lorempixel.com/350/350/nature">nature</option>
+              <option value="http://lorempixel.com/350/350/sports">sports</option>
+              <option value="http://lorempixel.com/350/350/technics">technics</option>
+              <option value="http://lorempixel.com/350/350/transport">transport</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="exampleTextarea">Campaign Description</label>
              <br>
-            <textarea class="campaignInputs" id="description" name="description" placeholder="Enter Campaign Description" rows="3"></textarea>
+            <textarea class="campaignInputs" id="description" name="description" placeholder="Enter Campaign Description" rows="3" required></textarea>
           </div>
           <div class="form-group">
             <label>How much do you want to raise?</label>
              <br>
-            <input class="campaignInputs" id="amount" name="amount" placeholder="$" type="text">
+            <input class="campaignInputs" id="amount" name="amount" placeholder="$" type="number" min="100" max="100000" required>
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>

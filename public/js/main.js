@@ -1,11 +1,11 @@
 ;(function(){
 
-			// Menu settings
-			$('#menuToggle, .menu-close').on('click', function(){
-				$('#menuToggle').toggleClass('active');
-				$('body').toggleClass('body-push-toleft');
-				$('#theMenu').toggleClass('menu-open');
-			});
+        // Menu settings
+        $('#menuToggle, .menu-close').on('click', function(){
+            $('#menuToggle').toggleClass('active');
+            $('body').toggleClass('body-push-toleft');
+            $('#theMenu').toggleClass('menu-open');
+        });
 
 
 })(jQuery)
@@ -53,8 +53,6 @@ function scaleBannerVideoSize(element){
     windowHeight = $(window).height() + 5,
     videoWidth,
     videoHeight;
-
-    // console.log(windowHeight);
 
     $(element).each(function(){
         var videoAspectRatio = $(this).data('height')/$(this).data('width');

@@ -28,7 +28,6 @@
 		return window.pageYOffset || docElem.scrollTop;
 	}
 
-	// http://stackoverflow.com/a/5598797/989439
 	function getOffset( el ) {
 		var offsetTop = 0, offsetLeft = 0;
 		do {

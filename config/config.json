@@ -1,5 +1,5 @@
 {
-  "development": {
+  "production": {
     "username": "root",
     "password": "root",
     "database": "donate_db",
@@ -13,11 +13,11 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+  "development": {
+    "username": "v6xs7qlemne5w7y8",
+    "password": "bct7u7jaia4dbvrc",
+    "database": "pcxkj5aejsotqq5k",
+    "host": "lmag6s0zwmcswp5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }

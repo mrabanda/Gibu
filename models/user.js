@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
 module.exports = function(sequelize, DataTypes) {
@@ -22,15 +22,10 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
         validPassword: function(password, passwd, callback) {
-          // console.log('validPassword password', password);
-          // console.log('validPassword passwd', passwd);
           bcrypt.compare(password, passwd, function(err, isMatch) {
-            console.log('isMatch', isMatch);
             if (isMatch) {
-              console.log('found match');
               return callback(null, true);
             } else {
-              console.log('returning false');
               return callback(null, false);
             }
           });
@@ -54,7 +49,6 @@ module.exports = function(sequelize, DataTypes) {
           return next(err);
         }
         user.password = hash;
-        console.log('hash', hash);
         return next(null, user);
       });
     });
